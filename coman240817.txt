@@ -1,0 +1,44 @@
+    1  apt-get install mariadb
+    2  apt-get install mariadb-server
+    3  alias chuy='echo es puto'
+    4  chuy
+    5  exit
+    6  chuy
+    7  mysql
+    8  cls
+    9  clear
+   10  apt-get install git
+   11  clear
+   12  ls
+   13  cd /home
+   14  ls
+   15  mkdir mia
+   16  ls
+   17  cd mia
+   18  mkdir repo
+   19  ls
+   20  cd repo
+   21  clear
+   22  git init
+   23  ls
+   24  git pull https://github.com/andresdeluna27/redes3.git master
+   25  git clone https://github.com/andresdeluna27/redes3.git
+   26  touch holamundo.txt
+   27  ls
+   28  cd redes3
+   29  touch holamundo
+   30  git status
+   31  git add .
+   32  git commit -m "hola"
+   33  git config --global user.name "andresdeluna27"
+   34  git commit -m "hola"
+   35  cd /home
+   36  mysql -u root -p
+   37  la
+   38  cd mia
+   39  ls
+   40  mysqldump -u root -p prueba > respaldo.sql
+   41  ls
+   42  cat respaldo.sql 
+   43  mysql -u root -p
+   44  history > coman270817.txt
