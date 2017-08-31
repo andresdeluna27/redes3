@@ -1,0 +1,34 @@
+create table profesor(
+curp char(18) primary key, 
+nombres varchar(50), 
+apat varchar(25), 
+amat varchar(25), 
+calle varchar(25), 
+numero_calle int, 
+fracc varchar(35),
+telefono varchar(15));
+
+create table materia(
+codigo varchar(10) primary key, 
+nombre varchar(20), 
+curp_profe char(18),
+jefe_grupo int);
+
+create table Alumno(
+no_exp int primary key auto_increment,
+nombre varchar(50),
+apat varchar(25),
+amat varchar(25),
+fecha_nac date);
+
+create table cursa(
+codigo_mat varchar(10), 
+no_exp int, 
+primary key(codigo_mat,no_exp));
+
+create table pago(
+no_pago int primary key auto_increment, 
+monto float,
+codigo_mat varchar(10),
+no_exp_alumno int,
+fecha date);
