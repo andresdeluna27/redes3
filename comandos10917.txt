@@ -1,0 +1,160 @@
+    1  apt-get install mariadb
+    2  apt-get install mariadb-server
+    3  alias chuy='echo es puto'
+    4  chuy
+    5  exit
+    6  ls
+    7  cd ..
+    8  cd mia
+    9  ls
+   10  scp respaldo.sql eduardo@148.211.152.112:/home/eduardo
+   11  ls
+   12  cd repo
+   13  ls
+   14  cd redes3/
+   15  ls
+   16  vi respaldo.sh
+   17  apt-get install ssh
+   18  apt-get install openssh-server
+   19  rm /var/lib/dpkg/lock
+   20  apt-get install openssh-server
+   21  ps aux | grep apt
+   22  kill 3825
+   23  ps aux | grep apt
+   24  apt-get install openssh-server
+   25  ls
+   26  cd ..
+   27  ls
+   28  cd etc
+   29  ls
+   30  vi crontab 
+   31  history
+   32  scp respaldo.sql eduardo@148.211.152.112:/home/eduardo < "Holamundo20!"
+   33  scp respaldo.sql eduardo@148.211.152.112:/home/eduardo | "Holamundo20!"
+   34  sshpass
+   35  apt-get install sshpass
+   36  sshpass -p "holamundo" scp respaldo.sql eduardo@148.211.152.133:/home/eduardo
+   37  cd ..
+   38  cd /mia/repo/redes3
+   39  ls
+   40  cd mia
+   41  ls
+   42  sshpass -p "holamundo" scp respaldo.sql eduardo@148.211.152.133:/home/eduardo
+   43  sshpass -p "Holamundoapt-get install openssh-server" scp respaldo.sql eduardo@148.211.152.112:/home/eduardo
+   44  sshpass -p "Holamundoapt-get install openssh-server" scp respaldo.sql eduardo@148.211.152.133:/home/eduardo
+   45  sshpass -p "Holamundoapt-get install openssh-server" scp respaldo.sql eduardo@148.211.152.112:/home/eduardo
+   46  sshpass -p "holamundo" scp respaldo.sql eduardo@148.211.152.133:/home/eduardo
+   47  exit
+   48  cd ..
+   49  cd mia/repo/redes3
+   50  ls
+   51  gedit respi.sh
+   52  ls
+   53  git add .
+   54  git commit -m "cron"
+   55  git push https://github.com/andresdeluna27/redes3 master
+   56  passwd root
+   57  exit
+   58  cd ..
+   59  cd mia
+   60  cd repo
+   61  cd redes3
+   62  ls
+   63  chmod -x respi.sh 
+   64  ls
+   65  chmod 777 respi.sh 
+   66  ls
+   67  ./respi.sh
+   68  gedit respi.sh 
+   69  ./respi.sh
+   70  gedit respi.sh 
+   71  ./respi.sh
+   72  gedit respi.sh 
+   73  ./respi.sh
+   74  gedit respi.sh 
+   75  cd /etc
+   76  ls
+   77  gedit crontab 
+   78  cd ..
+   79  cd mia
+   80  cd repo
+   81  ls
+   82  cd redes3
+   83  ls
+   84  gedit respi.sh 
+   85  cd /home
+   86  ls
+   87  exit
+   88  mysql -u root
+   89  exit]
+   90  exit
+   91  init 0
+   92  cd /etc
+   93  crontab crontab
+   94  mysql -u -p
+   95  mysql -u
+   96  mysql
+   97  mysql -p
+   98  cd /etc
+   99  ls
+  100  ls | greep "cron"
+  101  ls | grep "cron"
+  102  gedit crontab 
+  103  cd /home
+  104  cd /mia/repo/
+  105  cd mia/repo/
+  106  ls
+  107  mkdir bases
+  108  cd redes3
+  109  ls
+  110  cd ..
+  111  git status
+  112  cd redes3
+  113  git status
+  114  mkdir basesDatos
+  115  touch basesDatos/base.txt
+  116  gedit basesDatos/base.txt
+  117  mysql -u root -p instituto < basesDatos/base.txt 
+  118  gedit basesDatos/base.txt
+  119  mysql -u root -p instituto < basesDatos/base.txt 
+  120  git add .
+  121  git commit -m "base"
+  122  git push origin master
+  123  exit
+  124  mysql
+  125  mysql -p
+  126  exit
+  127  apt-get install steghide
+  128  ps -ef | grep apt
+  129  kill 3835
+  130  ps -ef | grep apt
+  131  kill 5515
+  132  ps -ef | grep apt
+  133  kill 5891
+  134  ps -ef | grep apt
+  135  kill 5912
+  136  apt-get install steghide
+  137  cd ..
+  138  ls
+  139  cd ..
+  140  ls
+  141  cd /Desktop
+  142  cd /home
+  143  cd alumno/
+  144  ls
+  145  cd desktop
+  146  cd Desktop
+  147  steghide embed -cf poke.jpg - ef hide.txt
+  148  steghide embed -cf poke.jpg -ef hide.txt
+  149  steghide extract -sf poke.jpg 
+  150  ls
+  151  rm hide.txt 
+  152  ls
+  153  steghide extract -sf poke.jpg 
+  154  ls
+  155  rm hide.txt 
+  156  ls
+  157  steghide extract -sf poke.jpg 
+  158  ls
+  159  cat hide.txt 
+  160  history > comandos10917.txt
