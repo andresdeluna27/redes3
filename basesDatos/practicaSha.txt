@@ -1,0 +1,16 @@
+create table users(
+id int primary key auto_increment,
+user varchar(20),
+pass varchar(200));
+
+insert into users (pass,user) values(sha2('sistemas',256),'sistema');
+
+insert into users (pass,user) values(md5('sistemas'),'sistema');
+
+insert into users (pass,user) values(sha1('sistemas'),'sistema');
+
+insert into users (pass,user) values(sha2('sistemas',384),'sistema');
+
+set @a=(select sha2('sistemas',256));
+
+insert into users (pass,user) values(@a,'pepito');
