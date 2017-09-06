@@ -1,0 +1,20 @@
+create table padre(id int primary key auto_increment,
+nombre char(20));
+
+create table hijo(id int primary key auto_increment, 
+nombre char(20), 
+id_padre int, foreign key (id_padre) references padre(id) on delete cascade);
+
+insert into padre (nombre) values('juan');
+
+insert into hijo(nombre,id_padre) values('hijo de juan',1);
+
+delete from hijo where id_padre=1;
+
+delete from padre where id=1;
+
+drop table hijo;
+
+drop table padre;
+
+delete from padre where id=1;
