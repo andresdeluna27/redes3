@@ -1,0 +1,24 @@
+create table persona(
+id int primary key auto_increment,
+nombre varchar(20), apat varchar(20), amat varchar(20),
+edad int, fecha_nac date);
+
+insert into persona values(id,"pedro","perez","garcia",10,'2007-12-03');
+
+insert into persona(id,nombre,apat,amat,edad,fecha_nac) values(id,'','','',0,'0000-00-00');
+
+insert into persona(id) values(id);
+
+insert into persona(nombre) values("gilber");
+
+insert into persona values(id,'persona1','pat1','mat1',20,curdate()), (id,'persona2','pat2','mat2',15,curdate());
+
+insert into persona set nombre='rosario', apat='lopez';
+
+insert into persona(nombre) values('medina'),('Angelica'),('chuy'),('Maria'),('Andres'),('Miriam');
+
+delete from persona where id=9 and nombre='medina';
+
+delete from persona where id=2;
+
+update persona set nombre='Alejandra',fecha_nac='1996-12-03' where id=6;
