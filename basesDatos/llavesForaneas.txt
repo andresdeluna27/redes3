@@ -18,3 +18,33 @@ drop table hijo;
 drop table padre;
 
 delete from padre where id=1;
+
+update persona set amat='quiroz' where id=5
+
+delete from persona where 1;
+
+insert into persona (nombre) values ('nombre1');
+
+truncate persona; //para borrar todo pero poner el id en 1 de nuevo
+
+insert into persona (id,nombre,apat,amat,edad,fecha_nac) values (id,'Medina','MEdina','Medina',20,'1996-12-9');
+
+alter table persona add genero varchar(1); //agrega columna
+
+alter table persona change genero genero varchar(20); //cambia valor de col
+
+alter table persona change genero sexo varchar(20); //cambia nombre de col
+
+alter table persona drop sexo;
+
+select nombre, apat, edad from persona where edad=20;
+
+select concat('Nombre: ',nombre,' Apellido: ',apat,' Edad: ',edad)as Nombre from persona where edad=20; //as es para poner alias
+
+select concat(curdate(),'Nombre: ',nombre,' Apellido: ',apat,' Edad: ',edad)as resulta from persona where edad=20; 
+
+select nombre, edad, fecha_nac from persona where edad <21;
+
+select nombre, edad, fecha_nac from persona where edad between 21 and 40;
+
+select nombre, edad, fecha_nac from persona where nombre between 'a' and 'h';
