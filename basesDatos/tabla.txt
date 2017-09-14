@@ -72,18 +72,19 @@ update persona set id_ciudad=1 where id=1;
 
 select a.nombre, b.ciudad from persona a, ciudad b where b.id=a.id_ciudad and b.ciudad="Aguascalientes";
 
+select a.nombre, b.ciudad from persona a, ciudad b where a.id_ciudad=b.id and b.ciudad='Aguascalientes' order by a.nombre;
 
 
+select concat(a.nombre,' de ', b.ciudad)as x from persona a, ciudad b where a.id_ciudad=b.id and b.ciudad='Aguascalientes' order by a.nombre;
 
 
+select a.nombre from persona a where a.nombre like 'a%';
 
+select a.nombre from persona a where a.nombre like 'a%' or a.nombre like 'm%'; #nombres que comiencen con a o m
 
+select count(a.id) as suma from persona a, ciudad b where a.id_ciudad=b.id and b.ciudad='Aguascalientes' and a.apat is null; #nulo es diferente de ''
 
-
-
-
-
-
+select avg(a.id) as prom from persona a, ciudad b where a.id_ciudad=b.id and b.ciudad='Aguascalientes' and a.apat is null; #nulo es diferente de ''
 
 
 
