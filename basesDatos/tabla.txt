@@ -86,6 +86,23 @@ select count(a.id) as suma from persona a, ciudad b where a.id_ciudad=b.id and b
 
 select avg(a.id) as prom from persona a, ciudad b where a.id_ciudad=b.id and b.ciudad='Aguascalientes' and a.apat is null; #nulo es diferente de ''
 
+create table estado(id int primary key auto_increment, nombre varchar(20));
+
+insert into estado(id,'Aguascalientes');
+
+insert into estado values(id,'Jalisco');
+
+update ciudad set id_estado=1 where id=1;
+
+update ciudad set id_estado=2 where id=4;
+
+select nombre,apat,amat from persona order by apat,nombre;
+
+select nombre,apat,amat from persona order by apat asc,nombre asc;
+
+select nombre,apat,amat from persona order by apat desc,nombre desc;
+
+select concat('resultado:',nombre,' ',apat,' ',amat)nombre from persona order by apat desc,nombre desc;
 
 
 
