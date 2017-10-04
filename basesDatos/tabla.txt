@@ -104,5 +104,12 @@ select nombre,apat,amat from persona order by apat desc,nombre desc;
 
 select concat('resultado:',nombre,' ',apat,' ',amat)nombre from persona order by apat desc,nombre desc;
 
+select concat('resultado:',a.nombre,' ',a.apat,' ',a.amat)nombre, b.ciudad from persona a,ciudad b 
+where a.id_ciudad=b.id order by apat desc,nombre desc;
 
+select concat('resultado:',a.nombre,' ',a.apat,' ',a.amat)nombre, b.ciudad, c.nombre as estado from persona a,ciudad b, estado c 
+where a.id_ciudad=b.id and b.id_estado=c.id order by apat desc,nombre desc;
+
+select concat('resultado:',a.nombre,' ',a.apat,' ',a.amat)nombre, b.ciudad, c.nombre as estado from persona a,ciudad b, estado c 
+where a.id_ciudad=b.id and b.id_estado=c.id order by apat desc,nombre desc limit 2;
 
