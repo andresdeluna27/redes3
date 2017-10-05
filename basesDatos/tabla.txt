@@ -113,3 +113,39 @@ where a.id_ciudad=b.id and b.id_estado=c.id order by apat desc,nombre desc;
 select concat('resultado:',a.nombre,' ',a.apat,' ',a.amat)nombre, b.ciudad, c.nombre as estado from persona a,ciudad b, estado c 
 where a.id_ciudad=b.id and b.id_estado=c.id order by apat desc,nombre desc limit 2;
 
+select a.nombre, b.id, b.ciudad,c.id, c.nombre from persona a, ciudad b, estado c
+where a.id_ciudad=b.id and b.id_estado=c.id;
+
+select * from persona where nombre like 'A%';
+
+select nombre,apat,amat from persona where nombre like '%a%' or apat like '%a%';
+
+select a.nombre,a.apat,a.amat,b.ciudad from persona a,ciudad b where (nombre like '%a%' or apat like '%a%') and a.id_ciudad=b.id;
+
+select a.nombre,a.apat,a.amat,b.ciudad from persona a,ciudad b where (nombre like '%a%' or apat like '%a%') and a.id_ciudad=b.id order by a.nombre,a.apat;
+
+select a.nombre,a.apat,a.amat,b.ciudad from persona a,ciudad b where (nombre like '%a%' or apat like '%a%') and a.id_ciudad=b.id order by a.nombre,a.apat limit 3;
+
+select a.nombre,a.apat,a.amat,b.ciudad from persona a,ciudad b where (nombre like '%a%' or apat like '%a%') and a.id_ciudad=b.id order by a.nombre,a.apat limit 3,2; //---------------------despues de los 3 primeros muestra los siguientes 2-------------------------------
+
+select a.nombre,a.apat,a.amat,b.ciudad,c.nombre as estado from persona a,ciudad b, estado c where (a.nombre like '%a%' or a.apat like '%a%') and a.id_ciudad=b.id and b.id_estado=c.id order by a.nombre,a.apat limit 3,2;
+
+select count(a.id)as resultado from persona a,ciudad b, estado c where (a.nombre like '%a%' or a.apat like '%a%') and a.id_ciudad=b.id and b.id_estado=c.id order by a.nombre,a.apat limit 3,2;
+
+select a.nombre from persona a,ciudad b, estado c where a.nombre like 'a%' and a.id_ciudad=b.id and b.id_estado=c.id order by a.nombre,a.apat;
+
+select count(a.id)as cuenta, b.ciudad from persona a,ciudad b where a.id_ciudad=b.id group by(b.ciudad);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
