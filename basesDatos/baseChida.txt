@@ -1,0 +1,38 @@
+git clone https://github.com/datacharmer/test_db
+
+describe employees;
+
+select first_name, birth_date from employees where first_name like '%a%';
+
+select first_name, birth_date from employees where first_name like '%a%' limit 100;
+
+select first_name, birth_date from employees where first_name like '%a%' order by first_name limit 100;
+
+select a.first_name, a.birth_date, b.salary from employees a, salaries b where first_name like '%a%' order by first_name limit 100;
+
+select count(gender) from employees where gender='F';
+
+select count(gender) from employees group by gender;
+
+select gender, count(gender) from employees group by gender;
+
+
+select first_name from employees limit 5;
+
+select a.first_name, b.title from employees a, titles b where a.emp_no=b.emp_no limit 1;
+
+select a.first_name,a.last_name, b.title from employees a, titles b where a.emp_no=b.emp_no and (a.birth_date between '1960/01/01' and '1960/12/31') limit 1; //primera persona con fecha entre 1960/01/01 y 1970/12/31
+
+select count(emp_no) from employees where birth_date in ('1960/01/10','1960/01/11');
+
+select count(emp_no) from employees where birth_date in ('1960/01/10','1960/01/11') group by birth_date;
+
+select birth_date,count(emp_no) from employees where birth_date in ('1960/01/10','1960/01/11') group by birth_date;
+
+select title,count(title) from titles group by title;
+
+select title,count(title) from titles group by title having count(emp_no) >500;
+
+
+
+
