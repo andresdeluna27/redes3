@@ -33,6 +33,14 @@ select title,count(title) from titles group by title;
 
 select title,count(title) from titles group by title having count(emp_no) >500;
 
+select persona.nombre, ciudad.ciudad from persona inner join ciudad where persona.id_ciudad=ciudad.id;
+
+/inner join con 3 tablas de tarea
+
+select persona.nombre, ciudad.ciudad, estado.nombre from persona inner join ciudad inner join estado where persona.id_ciudad=ciudad.id and ciudad.id_estado=estado.id;
+
+create view v_persona as select * from persona; //-----crea vistas que son solo ligas logicas a la tabla con los datos que escogamos
+
 
 
 
