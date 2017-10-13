@@ -1,0 +1,41 @@
+1.-
+
+
+a--------select first_name, last_name from employees;
+b--------select first_name, last_name, birth_date from employees order by birth_date;
+c--------select first_name, last_name, gender from employees where gender='F';
+d--------select first_name, last_name, gender, birth_date from employees where gender='F' order by birth_date desc;
+e--------select first_name, last_name, gender, birth_date from employees where gender='F' order by birth_date desc limit 10;
+f--------select concat(first_name,' ',last_name)'nombre completo' from employees;
+g--------select emp_no from employees where emp_no between '35000' and '42900'; //7901 resultados
+
+2.-
+select count(emp_no)'empleados' from employees; //
+
+3.-
+select count(dept_no) from departments;
+
+4.-
+select sum(salary)'salario total' from salaries;
+
+5.-
+select * from departments order by (dept_no);
+
+6.-
+select employees.first_name, salaries.salary from employees inner join salaries on employees.emp_no=salaries.emp_no limit 30;
+
+7.-
+select employees.first_name, salaries.salary from employees left join salaries on employees.emp_no=salaries.emp_no limit 30;
+
+8.-
+select first_name form employees union select title from titles;
+
+10.-
+create view v_employee as select * from employees;
+se muestra como una tabla mas
+desc v_employee;
+insert into v_employee values(149213,'1996-05-27','Andres','de luna','M','2014-08-14');
+//se agrega el registro tambien en la tabla employees
+drop view v_employee;
+//nada, el registro insertado en la vista sigue ahi
+
