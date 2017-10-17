@@ -1,0 +1,15 @@
+alter table employees add index indice_nombre(first_name);
+
+select count(emp_no) from dept_emp group by (dept_no);
+
+select dept_name,count(emp_no) from departments, dept_emp where departments.dept_no=dept_emp.dept_no group by (dept_emp.dept_no);
+
+select dept_name,count(emp_no) from departments, dept_emp where departments.dept_no=dept_emp.dept_no group by (dept_emp.dept_no) having (count(dept_emp.dept_no)>50000);//------------having trabaja sobre agrupaciones
+
+select b.first_name, sum(a.salary) as 'salario' from salaries a, employees b where a.emp_no=b.emp_no group by (b.emp_no) having (sum(a.salary)>100000) order by sum(a.salary) desc limit 10;
+
+set  @a=100000;
+
+select b.first_name, sum(a.salary) as 'salario' from salaries a, employees b where a.emp_no=b.emp_no group by (b.emp_no) having (sum(a.salary)>@a) order by sum(a.salary) desc limit 10;
+
+
