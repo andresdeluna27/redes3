@@ -1,0 +1,26 @@
+1.-
+
+select a.first_name, sum(b.salary) from employees a, salaries b where a.emp_no=b.emp_no group by (a.emp_no);
+ ------------da 300024 
+
+2.-
+
+select a.first_name, sum(b.salary) from employees a, salaries b where a.emp_no=b.emp_no group by (a.emp_no) limit 10;
+
+3.-
+
+select a.first_name, sum(b.salary), a.gender from employees a, salaries b where a.emp_no=b.emp_no and a.gender='F' group by (a.emp_no) limit 10;
+
+4.-
+
+select a.first_name, sum(b.salary) from employees a, salaries b where a.emp_no=b.emp_no group by (a.emp_no) having (sum(b.salary)>1450000);
+-----------da 7037
+
+5.-
+
+select a.first_name, sum(b.salary), d.dept_name from departments d, dept_emp c, employees a, salaries b where a.emp_no=b.emp_no and a.emp_no=c.emp_no and d.dept_no=c.dept_no group by (a.emp_no) limit 10;
+
+6.-
+
+
+
