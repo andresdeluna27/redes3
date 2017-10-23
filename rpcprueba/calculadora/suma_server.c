@@ -23,11 +23,11 @@ int * suma_1_svc(sumandos *argp, struct svc_req *rqstp)
 		break;
 		case 4: result=argp->sumando1 * argp->sumando2;
 		break;
-		case 5: //result=(int)(sin(argp->sumando1));
+		case 5: result=(int)(sin(argp->sumando1));
 		break;
-		case 6: result=argp->sumando1 * argp->sumando2;
+		case 6: result=(int)(cos(argp->sumando1));
 		break;
-		case 7: result=argp->sumando1 * argp->sumando2;
+		case 7: result=(int)(tan(argp->sumando1));
 		break;
 		default: break;
 	

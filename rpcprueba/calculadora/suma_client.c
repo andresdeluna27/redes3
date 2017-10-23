@@ -19,9 +19,10 @@ suma_prg_1(char *host)
 		scanf("%d",&suma_1_arg.op);
 		printf("digito 1: ");
 		scanf("%d",&suma_1_arg.sumando1);
+		if(suma_1_arg.op<5){
 		printf("digito 2: ");
 		scanf("%d",&suma_1_arg.sumando2);
-
+		}
 	
 
 #ifndef	DEBUG
