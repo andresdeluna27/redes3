@@ -22,5 +22,55 @@ select a.first_name, sum(b.salary), d.dept_name from departments d, dept_emp c, 
 
 6.-
 
+select a.first_name, sum(b.salary), d.dept_name from titles e, departments d, dept_emp c, employees a, salaries b where a.emp_no=b.emp_no and a.emp_no=c.emp_no and d.dept_no=c.dept_no and a.emp_no=e.emp_no group by (a.emp_no) limit 10;
+
+
+7.-
+
+select a.first_name, sum(b.salary), d.dept_name from titles e, departments d, dept_emp c, employees a, salaries b where a.emp_no=b.emp_no and a.emp_no=c.emp_no and d.dept_no=c.dept_no and a.emp_no=e.emp_no and a.first_name like ‘z%’ group by (a.emp_no) limit 10;
+
+8.-
+
+select a.dept_name, sum(b.emp_no) from current_dept_emp a, employees b where a.emp_no=b.emp_no group by (a.dept_name);
+
+9.-
+
+select a.dept_name, sum(b.emp_no) from current_dept_emp a, employees b where a.emp_no=b.emp_no group by (a.dept_name) and having(sum(b.emp_no)>80000);
+
+10.-
+
+create view v_employees_m as select * from employees where employees.gender=’M’;
+
+11.-
+
+create view v_employees_f as select * from employees where employees.gender=’F’;
+
+12.-
+
+select upper(first_name), upper(last_name) from employees;
+
+13.-
+
+select count(emp_no), gender from employees group by (gender);
+hombre 179974
+mujer 120051
+
+14.-
+
+alter table employees add index First_name(first_name);
+alter table titles add index Title(title);
+alter table departments add index Dept_name(dept_name);
+
+15.-
+
+select cout(a.emp_no),b.title from employees a, titles b where a.emp_no=b.emp_no group by (title);
+
+16.-
+
+select cout(a.emp_no),b.title from employees a, titles b where a.emp_no=b.emp_no group by (title) having (count(a.emp_no<30));
+
+17.-
+
+select date_format(birth_date, ‘%M’), count(emp_no) from employees group by (date_format(birth_date, ‘%M’));
 
 
