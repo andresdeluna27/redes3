@@ -10,9 +10,9 @@ xdr_sumandos (XDR *xdrs, sumandos *objp)
 {
 	register int32_t *buf;
 
-	 if (!xdr_float (xdrs, &objp->sumando1))
+	 if (!xdr_int (xdrs, &objp->sumando1))
 		 return FALSE;
-	 if (!xdr_float (xdrs, &objp->sumando2))
+	 if (!xdr_int (xdrs, &objp->sumando2))
 		 return FALSE;
 	 if (!xdr_int (xdrs, &objp->op))
 		 return FALSE;

@@ -11,18 +11,19 @@ void
 suma_prg_1(char *host)
 {
 	CLIENT *clnt;
-	float  *result_1;
+	int  *result_1;
 	sumandos  suma_1_arg;
 	suma_1_arg.op=-1;
 	while(suma_1_arg.op!=0){
 		printf("seleciona la operacion:\n1--suma\n2--resta\n3--division\n4--multi\n5--seno\n6--coseno\n7--tangente\n0--salir\n");
 		scanf("%d",&suma_1_arg.op);
 		printf("digito 1: ");
-		scanf("%f",&suma_1_arg.sumando1);
+		scanf("%d",&suma_1_arg.sumando1);
 		if(suma_1_arg.op<5){
 		printf("digito 2: ");
-		scanf("%f",&suma_1_arg.sumando2);
+		scanf("%d",&suma_1_arg.sumando2);
 		}
+	
 
 #ifndef	DEBUG
 	clnt = clnt_create (host, SUMA_PRG, SUMA_VER, "udp");
@@ -33,13 +34,13 @@ suma_prg_1(char *host)
 #endif	/* DEBUG */
 
 	result_1 = suma_1(&suma_1_arg, clnt);
-	if (result_1 == (float *) NULL) {
+	if (result_1 == (int *) NULL) {
 		clnt_perror (clnt, "call failed");
 	}
 #ifndef	DEBUG
 	clnt_destroy (clnt);
-#endif	 /* DEBUG */  
-	printf("resultado: %f \n",*result_1);
+#endif	 /* DEBUG */
+	printf("resultado: %d \n",*result_1);
 	}
 }
 

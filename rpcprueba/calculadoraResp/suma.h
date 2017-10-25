@@ -15,8 +15,8 @@ extern "C" {
 
 
 struct sumandos {
-	float sumando1;
-	float sumando2;
+	int sumando1;
+	int sumando2;
 	int op;
 };
 typedef struct sumandos sumandos;
@@ -26,14 +26,14 @@ typedef struct sumandos sumandos;
 
 #if defined(__STDC__) || defined(__cplusplus)
 #define suma 1
-extern  float * suma_1(sumandos *, CLIENT *);
-extern  float * suma_1_svc(sumandos *, struct svc_req *);
+extern  int * suma_1(sumandos *, CLIENT *);
+extern  int * suma_1_svc(sumandos *, struct svc_req *);
 extern int suma_prg_1_freeresult (SVCXPRT *, xdrproc_t, caddr_t);
 
 #else /* K&R C */
 #define suma 1
-extern  float * suma_1();
-extern  float * suma_1_svc();
+extern  int * suma_1();
+extern  int * suma_1_svc();
 extern int suma_prg_1_freeresult ();
 #endif /* K&R C */
 

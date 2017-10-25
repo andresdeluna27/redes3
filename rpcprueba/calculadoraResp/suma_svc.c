@@ -33,7 +33,7 @@ suma_prg_1(struct svc_req *rqstp, register SVCXPRT *transp)
 
 	case suma:
 		_xdr_argument = (xdrproc_t) xdr_sumandos;
-		_xdr_result = (xdrproc_t) xdr_float;
+		_xdr_result = (xdrproc_t) xdr_int;
 		local = (char *(*)(char *, struct svc_req *)) suma_1_svc;
 		break;
 
