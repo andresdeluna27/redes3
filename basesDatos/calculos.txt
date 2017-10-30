@@ -1,0 +1,71 @@
+set @a= select ascii('h');
+
+set @a= (select ascii('h'));
+
+select concat('el valor ascii de h=',@a);
+
+
+select sha(@a);
+
+set @b=(select sha(@a));
+
+select conv('a',16,2);
+
+create table conversion(id int primary key auto_increment, valor varchar(100));
+
+set @a=(select conv('e',16,8));
+
+insert into conversion(valor) values(@a);
+
+select * from conversion;
+
+select lcase('HOLA'); //cambia a minusculas
+
+select ucase('hola');
+
+update persona set nombre=ucase(nombre) where 1;
+
+select left(nombre,3) from persona where id=1; //agarra los primeros 3 caracteres de izq a derecha
+
+select length(left(nombre,3)) from persona where id=1;	
+
+select mid('sistemas',2,3); //toma los 3 desde el caracter 2
+
+select mid('sistemas',2); //toma desde el caracter 2
+
+select repeat('Sistema',20); 
+
+select sha(repeat('sistemas',20));
+
+select reverse(mid(now(),2));
+
+select trim(' sistemas ');//quita los espacios en los extremos
+
+select ltrim(' sistemas ');//izq
+
+select rtrim(' sistemas ');//der
+
+select replace('sistemas','s','S');
+
+select replace('imagen/otra/pic.jpg','/','-'); //remplaza los / para evitar que se hagan o mueva de carpeta
+
+set @a=(select replace(concat('nombre.txt-',now()),' ','-'));
+
+select @a;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
