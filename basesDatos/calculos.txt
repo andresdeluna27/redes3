@@ -53,15 +53,71 @@ set @a=(select replace(concat('nombre.txt-',now()),' ','-'));
 
 select @a;
 
+select abs(-10);
 
+select sin(1);
 
+select cos(1);
 
+select tan(1);
 
+select asin(1);
 
+select acos(1);
 
+select atan(1);
 
+select ceil(1.25);//redondeo hacia arriba
 
+select floor(1.25);//redondeo hacia abajo
 
+select degrees(pi());
+
+select exp(2);
+
+select ln(3);
+
+select log(3);
+
+select pow(2,3)
+
+select rand();
+
+select rand(now());
+
+select round(rand(now()));
+
+select round(21.8,-1);//-1 trabaja con enteros y 1 con decimales
+
+select sqrt(9);
+
+select now();
+
+select sysdate();
+
+select curtime();//hora
+
+select utc_time();//hora global
+
+select adddate(curtime(),interval 15 day);
+
+select adddate(curdate(),interval 15 day);
+
+select date_add(curdate(), interval 15 day);//fecha en 15 dias
+
+select date_add(curdate(), interval 1 week);
+
+select date_add(curdate(), interval 1 month);
+
+select date_add(curtime(), interval 1 hour);//lo mismo pero en hora
+
+select date_sub(curtime(), interval -1 hour);//suma una hora porque es --=+
+
+select dayname(date_sub('2017-03-02', interval 10 year));
+
+select datediff('2017-05-01','2017-01-01');// diferencia de fechas
+
+select datediff(curdate(),'1996-05-27');
 
 
 
