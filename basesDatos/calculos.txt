@@ -119,6 +119,50 @@ select datediff('2017-05-01','2017-01-01');// diferencia de fechas
 
 select datediff(curdate(),'1996-05-27');
 
+select date_format(curdate(),"%M %e, %Y");
+
+select date_format(curdate(),"The %e of %M");
+
+select date_format(curdate(),"The %e of %M is %w");
+
+select date_format(curdate(),"The %e of %M is %W");
+
+select dayofmonth(curdate());
+
+select dayofweek(curdate());
+
+select dayofyear(curdate());
+
+select 365-dayofyear(curdate());
+
+select extract(year from curdate());
+
+select extract(month from curdate());
+
+select extract(day from curdate());
+
+select extract(minute from now());
+
+select extract(hour_minute from now());
+
+select extract(second from now());
+
+select time_format("13:23:55", "%H:%i");
+
+select time_format("13:23:55", "Son las %H horas con %i minutos");
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
