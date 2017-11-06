@@ -1,0 +1,66 @@
+delimiter //   es para cambiar el ; por //
+
+create trigger algo after insert on emp
+for each row
+begin
+set @x=(select min(eid) from employee);
+end;
+//
+
+insert into emp(ename) values('primero')//
+
+select @x//
+
+drop trigger algo//
+
+create trigger algo after insert on emp 
+for each row 
+begin 
+set @x=(select min(eid) from employee); 
+set@x=@x*100; 
+end;//
+
+insert into emp(ename) values('segundo')//
+
+select @x;
+
+create trigger algo2 after insert on emp 
+for each row 
+begin 
+declare m char(20); 
+set m=(select ename from employee where eid=1); 
+set @c=m; 
+end;//
+
+insert into emp(ename) values('primero')//
+
+select @c//
+
+create trigger algo after update on emp
+for each row
+begin
+declare a int;
+set a=10;
+set @x=(select max(eid) from employee);
+set @x=a*@x;
+end;//
+
+
+use information_schema;
+
+select * from TRIGGERS;
+
+drop trigger algo;
+
+create trigger algo before insert on emp
+for each row
+begin
+update employee set ename='cambiado' where perks>500;
+end;
+//
+
+insert into emp(ename) values('cuarto')//
+
+select * from employee//
+
+

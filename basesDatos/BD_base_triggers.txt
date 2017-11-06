@@ -1,0 +1,17 @@
+
+
+create database prueba;
+use database prueba;
+
+create table employee (eid int not null primary key auto_increment, ename varchar(20), city varchar(20), designation varchar (20), salary float, perks int);
+
+create table emp(eid int not null primary key auto_increment, ename varchar(20), city varchar(20), designation varchar (20), salary float, perks int);
+
+insert into employee (ename,city,designation, salary, perks) values ("pedro","aguascalientes","administrador",12000,554);
+insert into employee (ename,city,designation, salary, perks) values ("margarita","aguascalientes","administrador",1780,600);
+insert into employee (ename,city,designation, salary, perks) values ("andrea","aguascalientes","secretaria",120,400);
+insert into employee (ename,city,designation, salary, perks) values ("juan","aguascalientes","contador",12000,30);
+insert into employee (ename,city,designation, salary, perks) values ("antonio","aguascalientes","jefe de piso",9500,150);
+insert into employee (ename,city,designation, salary, perks) values ("erick","aguascalientes","administrador",12000,400);
+
+insert into employee (ename,city,designation, salary, perks) values ("maria","aguascalientes","verificadora",1200,400);
