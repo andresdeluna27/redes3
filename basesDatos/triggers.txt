@@ -63,4 +63,103 @@ insert into emp(ename) values('cuarto')//
 
 select * from employee//
 
+create trigger algo before update on emp
+for each row begin
+declare y int;
+set y=10;
+if y=10 then
+#sentencia del if
+update employee set salary=50 where 
+end if
+end
+
+update emp set ename='cuartox' where eid=4//
+
+drop trigger algo//
+
+create trigger algo after insert on emp
+for each row
+begin
+delcare y int;
+set y=10;
+if y=10 then
+	update employee set salary=100 where eid<=4;
+else
+	update employee set salary=200 where eid>4;
+end if;
+end;
+//
+
+insert into emp(ename) values ('quinto')//
+
+create trigger algo before update on employee 
+for each row
+begin
+if new.salary<=50 then
+set new.salary=1000;
+elseif new.salary>50 then
+set new.salary=1500;
+end if;
+end;
+//
+
+update employee set ename='cambiadox' where eid=1// # en este caso el trigger solo va a acutar sobre los registros que tuvieron cambio
+update employee set enmae='cambiadox' where eid=2 or eid=3//
+
+create trigger algo before insert on emp
+for each row
+begin
+if @a<10 then
+	update employee set salary=2300 where 1;
+else
+	update employee set salary=5600 where 1;
+end if;
+end;
+//
+
+set @a=15//
+
+insert into emp (ename) values ('sexto')//
+
+create trigger algo after insert on emp
+for each row
+begin
+delacre y int;
+set y=1;
+set @b=0;
+while y<@tope do
+	set @b=@b+1;
+	set y=y+1;
+end while;
+end;
+//
+
+set @tope=1000000//
+
+insert into emp(ename) values('septimo')//
+
+drop trigger algo//
+
+create table pruebita(id int pimary key auto_increment, fecha date)//
+
+create trigger algo after insert on emp
+for each row
+begin
+declare x,y int;
+set x=1, y=10;
+while x<y do
+	if x<=5 then
+	insert into pruebita(fecha) values (curdate());
+	else
+	insert into pruebita(fecha) values (date_sub(curdate(), interval 30 day));
+	end if;
+	set x=x+1;
+end while;
+end;
+//
+
+insert into emp(ename) values ('octavo')//
+
+
+
 
