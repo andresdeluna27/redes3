@@ -1,0 +1,173 @@
+delimiter //;
+
+create procedure p1()
+being
+select * from persona;
+end//
+
+show create procedure p1//
+
+create procedure p2(p int)
+begin 
+set @x=p;
+end//
+
+call p2(10)//
+
+create procedure p3(out p int)
+begin
+set p=5;
+end
+//
+
+call p3(@x)//
+
+
+create procedure p4(out total int)
+begin
+select count(id) into total from persona;
+end
+//
+
+call p4(@x)//
+
+create procedure p5(inout y int)
+begin
+set y=y*10;
+end
+//
+
+call p5(@x)//
+
+create procedure p6(palabra varchar(20))
+begin
+select nombre from persona where nombre=palabra;
+end
+//
+
+call p6('yo')//
+
+alter table persona add fecha_nac date//
+
+create procedure p7(palabra varchar(20), fecha date)
+begin
+select nombre from persona where nombre=palabra;
+insert into persona(fecha_nac) values(fecha);
+end
+//
+
+call p7('andres',curdate())//
+
+create procedure p8(palabra varchar(20), fecha date,out c int)
+begin
+select nombre from persona where nombre=palabra;
+insert into persona(fecha_nac) values(fecha);
+set c=(select count(nombre) from persona);
+end
+//
+
+
+call p8('andres',curdate(),@x)//
+
+
+create procedure p9(x int)
+begin
+if x<=10 then
+	insert into persona(nombre) values ('otro');
+else
+	insert into persona(nombre) values ('otro x');
+end if;
+end;
+//
+
+call p9
+
+alter table persona add password varchar(500)//
+
+create procedure p10(in palabra varchar(200))
+begin
+declare encripta varchar(200);
+set encripta=(select sha1(palabra));
+insert into persona (password) values (encripta);
+end
+//
+
+create table fechita(id int primary key auto_increment,
+fecha date)//
+
+create procedure p11(n int,fec date)
+begin
+declare x int default 0;
+declare y date;
+while x<n do
+	set y=adddate(fec, interval x day);
+	insert into fechita(fecha) values(y);
+	set x=x+1;
+end while;
+end 
+//
+
+call p11(5, curdate())//
+
+select * from fechita//
+
+create procedure p12(n int,fec date)
+begin
+declare x int default 0;
+declare y date;
+while x<n do
+	set y=adddate(fec, interval x month);
+	insert into fechita(fecha) values(y);
+	set x=x+1;
+end while;
+end 
+//
+
+call p12(5, curdate())//
+
+select * from fechita//
+
+create procedure p13(out pass varchar(200))
+begin
+set pass=(select nombre from persona where nombre='Andres');
+end
+//
+
+call p13(@salida)//
+
+select @salida//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
