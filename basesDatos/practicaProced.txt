@@ -1,0 +1,47 @@
+delimiter //
+
+1.------------
+
+create trigger algo after insert on departments
+for each row
+begin
+set @nom=(select concat(first_name,' ', last_name) from employees limit 999,1);
+end;
+//
+
+2.------------
+
+create trigger segundo before update on titles
+for each row
+begin
+set @salarios=(select sum(salary) from salaries where from_date>'1982-12-31' and to_date<'1990-01-01');
+end;
+//
+
+3.-------------
+
+create procedure p1(inicial varchar(1))
+begin
+declare nom varchar(5);
+set nom=concat(inicial,'%');
+select first_name from employees where first_name like nom;
+end
+//
+
+4.--------------
+
+create procedure p2()
+begin
+select dept_name from dept_emp where group by dept_no having(sum(emp_no)>150000);
+end
+//
+
+select dept_name from dept_emp where group by dept_no having(sum(emp_no)>150000);
+
+
+
+
+
+
+
+
