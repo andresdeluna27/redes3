@@ -32,13 +32,37 @@ end
 
 create procedure p2()
 begin
-select dept_name from dept_emp where group by dept_no having(sum(emp_no)>150000);
+select a.dept_name from dept_emp b, departments a where a.dept_no=b.dept_no group by (a.dept_no) having(sum(b.emp_no)>150000);
 end
 //
 
-select dept_name from dept_emp where group by dept_no having(sum(emp_no)>150000);
 
 
+5.-------------
+
+create procedure p3(fecha date, out num int)
+begin
+set num=(select count(emp_no) from employees where datediff(fecha,birth_date)>25550);
+end
+//
+
+6.-------------
+
+create procedure p4(G varchar(1),out num int)
+begin
+set num=(select count(emp_no) from employees where datediff(curdate(),birth_date) between 7300 and 21840 and gender=G);
+end
+//
+
+7.-------------
+
+create procedure p6(out num varchar(20))
+begin
+set num=(select title from titles group by (title) order by (count(emp_no)) desc limit 1);
+end
+//
+
+select title from titles group by (title) order by (count(emp_no)) desc limit 1;
 
 
 
