@@ -1,0 +1,66 @@
+set global log_bin_trust_function_creators=1;
+
+delimiter //
+
+create function uno() returns varchar(20)
+begin
+declare salida varchar(20) default 'hola mundo';
+return salida;
+end
+//
+
+select uno()//
+
+//--------------------- las funciones siempre regresan algo, no como los procedures
+
+create function dos(palabra varchar(20)) returns varchar(20)
+begin
+declare salida varchar(20) ;
+set salida=palabra;
+return salida;
+end
+//
+
+create function maximo() returns INT
+begin
+declare a int;
+set a=(select max(emp_no) from employees);
+return a;
+end 
+// 
+
+// para eliminar drop function 'nombre funcion'
+
+last_insert_id() //es para evitar errores en id, esta instruccion detiene todo para poder atender bien la instruccion
+//no se debe usar max(id), ya que puede haber errores de concurrencia
+//last insert trabaja sobre la ultima insercion del script
+
+
+create function conteo(fec date) returns INT
+begin
+declare salida int;
+set salida=(select count(emp_no) from employees persona group by birth_date having birth_date=fec);
+return salida;
+end
+//
+
+
+select conteo('1957-05-23')//
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
