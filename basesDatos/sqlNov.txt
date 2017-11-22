@@ -47,17 +47,46 @@ end
 
 select conteo('1957-05-23')//
 
+create function edad(fechaini date,fechafin date) returns int
+begin
+declare z int;
+set z=(year (fechafin)- year(fechaini));
+return z;
+end
+//
 
+create function volumen (radio float) returns float
+begin
+	declare vol float;
+	set vol=(4/5)*PI()*POW(radio,2);
+	return vol;
+end
+//
 
+create function salario() returns double
+begin
+set @a=(select sum(salary) from salaries);
+return @a;
+end
+//
 
+select count(emp_no) from titles where title=''
 
+create function titulo(titulo varchar(20)) returns double
+begin
+declare tit double;
+set tit=(select count(emp_no) from titles where title=titulo);
+return tit;
+end
+//
 
-
-
-
-
-
-
+create function conteo2(letra varchar(1)) returns double
+begin
+declare nombre varchar(2);
+set nombre=concat(letra,'%');
+return (select count(emp_no) from employees where first_name like nombre);
+end
+//
 
 
 
