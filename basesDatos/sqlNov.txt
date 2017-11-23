@@ -88,8 +88,44 @@ return (select count(emp_no) from employees where first_name like nombre);
 end
 //
 
+create function salarioSum(id int) returns varchar(20)
+begin
+declare a float;
+set a=(select sum(salary) from salaries where emp_no=id);
+if a>200000 then
+return 'salario bueno';
+else
+return 'salario malo';
+end if;
+end
+//
 
+create function salario3(id int) returns varchar(20)
+begin
+declare a float;
+set a=(select sum(salary) from salaries where emp_no=id);
+case 
+when a<100000 then
+	return 'salario bajo';
+when a>150000 then
+	return 'salario alto';
+else
+	return 'salario medio';
+end case;
+end
+//	 
 
+create function cosa(i varchar(1)) returns varchar(20)
+begin
+if i='1' then
+	create table algo(id int);
+	return 'se creo la tabla';
+else
+	drop table algo;
+	return 'se elimino la tabla';
+end if;
+end
+//
 
 
 
