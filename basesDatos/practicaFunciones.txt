@@ -1,0 +1,32 @@
+create function inserta(nom varchar(25), n int) returns varchar(10)
+begin
+declare i INT;
+set i=n;
+while i>0 do
+insert into persona set nombre=nom;
+set i=i-1;
+end while;
+return "hola";
+end
+//
+
+create function encrip(op varchar(25), n int) returns varchar(512)
+begin
+case
+when n=1 then
+	return sha(op);
+when n=2 then
+	return sha2(op,256);
+when n=3 then
+	return sha2(op,384);
+when n=4 then
+	return sha2(op,512);
+end case;
+end
+//
+
+create function fecha() returns date
+begin
+return (select birth_date from employees group by (birth_date) order by (count(emp_no)) desc limit 1);
+end;
+//

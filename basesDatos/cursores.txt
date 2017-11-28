@@ -5,12 +5,12 @@ declare o INT;
 declare recupera cursor
 for
 select emp_no from employees limit 1000;
-declare continue handler for sqlatate '02000' set done=1;
+declare continue handler for sqlstate '02000' set done=1;
 create table if not exists employees_respaldo(emp_no int);
 open recupera;
 
 while done <> 1 do
-  fecth recupera into o;
+  fetch recupera into o;
   insert into employees_respaldo(emp_no)
   values(o);
   end while;
